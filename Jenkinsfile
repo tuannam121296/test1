@@ -8,7 +8,7 @@ node {
 
     tag = readFile('commit-id').replace("\n", "").replace("\r", "")
     appName = "hello-nam"
-    registryHost = "127.0.0.1:30400/"
+    registryHost = "10.9.2.151:5000/"
     imageName = "${registryHost}${appName}:${tag}"
     env.BUILDIMG=imageName
 
@@ -22,5 +22,5 @@ node {
         
     stage "Deploy"
     	sh "sed 's#__IMAGE__#'$BUILDIMG'#' applications/hello-nam/k8s/deployment.yaml | kubectl apply -f -"
-        kubernetesDeploy configs: "applications/${appName}/k8s/*.yaml", kubeconfigId: 'nam_kube'
+        kubernetesDeploy configs: "applications/${appName}/k8s/*.yaml", kubeconfigId: 'kube_config'
 }
