@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: v1
 kind: Service
 metadata:
   name: hello-nam
@@ -30,7 +30,7 @@ spec:
         tier: hello-nam
     spec:
       containers:
-      - image: 10.9.2.151:5000/hello-nam:$BUILD_TAG
+      - image: 10.9.2.151:5000/hello-nam:0e04a0b
         name: hello-nam
         ports:
         - containerPort: 80
