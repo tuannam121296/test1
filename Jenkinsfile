@@ -14,7 +14,7 @@ node {
 
     stage "Build"
     
-        sh "docker build -t ${imageName} -f  /Icomm.Twitter.Api/Dockerfile Icomm.Twitter.Api"
+        sh "docker build -t ${imageName} applications/hello-nam"
     
     stage "Push"
 
