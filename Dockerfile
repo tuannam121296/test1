@@ -5,4 +5,4 @@ COPY DockerFileEx.jpg /usr/share/nginx/html/DockerFileEx.jpg
 
 EXPOSE 80
 
-ln -s /usr/share/zoneinfo/Asia/Ho_Chi_Minh /etc/localtime
+CMD ln -s /usr/share/zoneinfo/Asia/Ho_Chi_Minh /etc/localtime
