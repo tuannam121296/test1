@@ -5,4 +5,5 @@ COPY DockerFileEx.jpg /usr/share/nginx/html/DockerFileEx.jpg
 
 EXPOSE 80
 
+RUN ["rm", "-rf", "/etc/localtime"]
 RUN ["ln", "-s", "/usr/share/zoneinfo/Asia/Ho_Chi_Minh /etc/localtime"]
