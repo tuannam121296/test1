@@ -2,8 +2,6 @@ FROM nginx:latest
 
 COPY index.html /usr/share/nginx/html/index.html
 COPY DockerFileEx.jpg /usr/share/nginx/html/DockerFileEx.jpg
-
+RUN echo "Asia/Ho_Chi_Minh" > /etc/timezone
 EXPOSE 80
 
-RUN ["rm", "-rf", "/etc/localtime"]
-RUN ["ln", "-s", "/usr/share/zoneinfo/Asia/Ho_Chi_Minh /etc/localtime"]
